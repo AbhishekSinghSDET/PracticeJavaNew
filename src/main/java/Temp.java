@@ -3,24 +3,22 @@ import java.util.List;
 
 public class Temp {
 
-    public static List<String> reverse(String str){
-        List<String> l = new ArrayList<>();
+    public static String reverse(String str1, String str2){
 
-        for(int i = 0;i<str.length();i++){
-            for(int j =i+1;j<=str.length();j++){
-                l.add(str.substring(i,j));
-            }
-
-        }
+        int maxLength = Math.max(str1.length(), str2.length());
 
 
-        return l;
+
+
+
+        return null;
     }
 
     public static void main(String[] args) {
-        String s = "abc";
+        String s1 = "abc";
+        String s2 = "xyzabc";
 
-        System.out.println(reverse(s));
+        System.out.println(reverse(s1,s2));
     }
 }
 
