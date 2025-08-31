@@ -6,7 +6,7 @@ public class FactorialOfLargeNumber {
 
     public static BigInteger findfactorial(int a){
 
-        BigInteger result= BigInteger.ONE;
+        BigInteger result= BigInteger.ONE;  //BigInteger is a class in java and it is non primitive datatype
 
         for(int i =a;i>0;i--){
             result = result.multiply(BigInteger.valueOf(i));
