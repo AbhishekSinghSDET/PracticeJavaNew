@@ -1,10 +1,9 @@
 package oops;
 
-import java.sql.SQLOutput;
 import java.util.Scanner;
 
 //This is done using Procedural Programming which is not a good practice
-//Now we will create it using OOPS in next java class name: StudentManagementStudentOOPSß
+//Now we will create it using OOPS in next java class name: StudentManagementStudentOOPS
 
 public class StudentManagementSystem {
     //GLOBAL VARIABLES
