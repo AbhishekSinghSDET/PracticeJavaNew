@@ -4,23 +4,27 @@ import java.util.Arrays;
 
 public class MoveZerosToRight {
 
-    public static int[] moveZerosToRight(int[] a){
-        int n = a.length;
-        int nonZeroIndex = 0;
+    public static int[] moveZerosToRight(int[] arr){
+        int n = arr.length;
+        int zero = 0;
+        int nonZero = 0;
+        int[] result = new int[n];
+        int[] temp = new int[n];
 
-        for(int i = 0;i<n;i++){
-            if(a[i]!=0){
-                a[nonZeroIndex] = a[i];
-                nonZeroIndex++;
+        for(int a : arr){
+            if(a!=0){
+                result[nonZero++] = a;
+            }
+            else {
+                temp[zero++] = a;
             }
         }
 
-        while (nonZeroIndex < n){
-            a[nonZeroIndex]=0;
-            nonZeroIndex++;
+        for(int i = 0; i<zero;i++){
+            result[nonZero++] = temp[i];
         }
 
-        return a;
+        return result;
     }
 
 

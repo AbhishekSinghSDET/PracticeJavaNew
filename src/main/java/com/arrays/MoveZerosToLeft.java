@@ -3,24 +3,29 @@ import java.util.*;
 
 public class MoveZerosToLeft {
 
-    public static int[] moveZerosToLeft(int[] a){
-        int n = a.length;
-        int nonZeroIndex = n-1;
+    public static int[] moveZerosToLeft(int[] arr){
+        int n = arr.length;
+        int zero = 0;
+        int nonZero = 0;
+        int[] result = new int[n];
+        int[] temp = new int[n];
 
-        for(int i = n-1; i>=0;i--){
-            if(a[i]!=0){
-                a[nonZeroIndex] = a[i];
-                nonZeroIndex--;
+
+
+        for(int a : arr){
+            if(a==0){
+                result[zero++] = a;
+            }
+            else {
+                temp[nonZero++] = a;
             }
         }
 
-        while (nonZeroIndex>=0){
-            a[nonZeroIndex]=0;
-            nonZeroIndex--;
+        for(int i = 0; i<nonZero;i++){
+            result[zero++] = temp[i];
         }
 
-
-        return  a;
+        return result;
     }
 
 

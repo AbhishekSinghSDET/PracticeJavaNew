@@ -1,4 +1,4 @@
-package oops;
+package oops.encapsulation;
 
 import java.util.Scanner;
 
