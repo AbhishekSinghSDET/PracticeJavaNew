@@ -13,6 +13,7 @@ public class Teacher {
     private double salary;
     private static final double BASE_SALARY = 30000;
     private static final double EXPERIENCE_BONUS = 2000;
+    private static int teacherCounter = 0; //used to count how many teachers are not enrolled
 
 
     public Teacher(String name,int age, String contactNumber, String address,String empID, String subject, int yearsOfExperience) {
@@ -27,6 +28,7 @@ public class Teacher {
             this.age = age;
             this.name = name;
             calculateSalary();
+            teacherCounter++;
         }
     }
 
@@ -48,6 +50,10 @@ public class Teacher {
             System.out.println("Invalid Teacher Contact Number");
             return false;
         }
+    }
+
+    public static int getTotalTeacherCount(){
+        return teacherCounter;
     }
 
 

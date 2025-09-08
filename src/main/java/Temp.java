@@ -1,24 +1,36 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Stack;
 
 public class Temp {
 
-    public static String reverse(String str1, String str2){
+    public static boolean reverse(String str1){
 
-        int maxLength = Math.max(str1.length(), str2.length());
+        Stack<Character> s =  new Stack<>();
 
+        for(char c : str1.toCharArray()) {
+            if (c == '(' || c == '{' || c == '[') {
+                s.push(c);
+            } else {
+                if (s.isEmpty()) {
+                    return false;
+                }
 
-
-
-
-        return null;
+                char top = s.pop();
+                if ((c == ')' && top != '(') ||
+                        (c == '}' && top != '{') ||
+                        (c == ']' && top != '[')) {
+                    return false;
+                }
+            }
+        }
+        return s.isEmpty();
     }
 
     public static void main(String[] args) {
-        String s1 = "abc";
-        String s2 = "xyzabc";
+        String s1 = "{[]}";
 
-        System.out.println(reverse(s1,s2));
+        System.out.println(reverse(s1));
     }
 }
 

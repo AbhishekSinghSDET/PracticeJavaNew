@@ -27,6 +27,8 @@ public class Runner {
 */
 
         Teacher t1 = new Teacher("Abhishek",30,"9867392211","Mumbai","T101","Java",10);
+        Teacher t2 = new Teacher("Rohan",30,"9867392211","Mumbai","T101","Java",10);
         t1.displayTeacherInfo();
+        System.out.println("Total teachers enrolled: "+Teacher.getTotalTeacherCount()); //jitne object honge utna count
     }
 }
