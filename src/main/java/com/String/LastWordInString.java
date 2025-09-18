@@ -34,6 +34,6 @@ public class LastWordInString {
 
     public static void main(String[] args) {
         System.out.println(lengthOfLastWordInString("Hello World Is"));
-        System.out.println(lengthOfLastWordInString1("  Abhishek Singh  Is"));
+        System.out.print(lengthOfLastWordInString1("  Abhishek Singh  boy   "));
     }
 }

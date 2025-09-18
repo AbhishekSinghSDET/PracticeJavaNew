@@ -14,12 +14,14 @@ public class ValidParentheses {
             }
             // If closing bracket, check stack
             else {
-                if (stack.isEmpty()) return false;
+                if (stack.isEmpty()) {
+                    return false;
+                }
 
-                char top = stack.pop();
-                if ((c == ')' && top != '(') ||
-                    (c == '}' && top != '{') ||
-                    (c == ']' && top != '[')) {
+                char pop = stack.pop();
+                if ((c == ')' && pop != '(') ||
+                    (c == '}' && pop != '{') ||
+                    (c == ']' && pop != '[')) {
                     return false;
                 }
             }

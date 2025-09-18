@@ -2,31 +2,37 @@ import java.util.*;
 
 public class Rough {
 
-    public static String charFreqEncoding(String s){
-        int count =1;
-        StringBuilder sb = new StringBuilder();
+    public static boolean charFreqEncoding(String str){
 
+        Stack<Character> stack =  new Stack<>();
 
-        for(int i = 0; i<s.length()-1;i++){
-            if(s.charAt(i)==s.charAt(i+1)){
-                count++;
+        for(char c : str.toCharArray()){
+            if(c=='(' || c=='{' || c =='['){
+                stack.push(c);
             }
-            else{
-                sb.append(s.charAt(i)).append(count);
-                count=1;
+            else {
+                if(stack.isEmpty()){
+                    return false;
+                }
+
+                char pop = stack.pop();
+                if ((c == ')' && pop != '(') ||
+                        (c == '}' && pop != '{') ||
+                        (c == ']' && pop != '[')) {
+                    return false;
+                }
             }
         }
-        sb.append(s.charAt(s.length()-1)).append(count);
 
-       return sb.toString();
 
+        return stack.isEmpty();
     }
 
 
     public static void main(String[] args) {
-        String str = "AAABBCCDD";
+       String s = "()]{}";
 
-        System.out.println(charFreqEncoding(str));
+        System.out.println(charFreqEncoding(s));
 
     }
 }
