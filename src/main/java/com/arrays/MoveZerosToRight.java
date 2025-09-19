@@ -27,10 +27,26 @@ public class MoveZerosToRight {
         return result;
     }
 
+    //Simplest way of solving this
+
+    public static int[] moveZerosToRight1(int[] arr){
+        int nonZero = 0;
+
+        for(int current = 0 ; current<arr.length; current++){
+            if(arr[current]!=0){
+                int temp = arr[nonZero];
+                arr[nonZero] = arr[current];
+                arr[current] = temp;
+                nonZero++;
+            }
+        }
+        return arr;
+    }
 
     public static void main(String[] args) {
 
         int[] arr = {2,4,3,0,0,7,0,1};
         System.out.println(Arrays.toString(moveZerosToRight(arr)));
+        System.out.println("Simple way: "+Arrays.toString(moveZerosToRight1(arr)));
     }
 }
