@@ -5,7 +5,6 @@ import java.util.Arrays;
 public class RotateAnArrayWithinSameArray {
 
     public static int[] reverse(int[] a){
-        int j=0;
 
         for(int i = 0; i< a.length/2; i++){
             int b = a[i]; // 4

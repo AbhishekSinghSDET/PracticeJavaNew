@@ -2,33 +2,21 @@ import java.util.*;
 
 public class Rough {
 
-    public static int[] charFreqEncoding(int[] arr){
-        int left = 0;
-        int right = arr.length-1;
+    public static String charFreqEncoding(String str){
 
-        while (left < right){
-            if(arr[left]==0){
-                int temp = arr[left];
-                arr[left] = arr[right];
-                arr[right] = temp;
-                left++;
-                right--;
-            }
-            else {
-                left++;
-                right--;
-            }
-        }
+        StringBuilder sb = new StringBuilder();
+        String result = "";
 
-        return arr;
+        result = str.charAt(0)+sb.append(str.substring(1).toUpperCase()).toString();
+        return result;
 
     }
 
 
     public static void main(String[] args) {
-       int[]  a = {1,2,0,4,0,6,0};
+       String s = "abc";
 
-        System.out.println(Arrays.toString(charFreqEncoding(a)));
+        System.out.println(charFreqEncoding(s));
 
     }
 }
