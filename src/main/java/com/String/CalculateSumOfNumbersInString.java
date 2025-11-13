@@ -24,15 +24,32 @@ public class CalculateSumOfNumbersInString {
         it will not go inside else*/
         if(sb.length()>0) {
             result = result + Integer.parseInt(sb.toString());
-            sb.setLength(0);
         }
 
         return result;
     }
 
+    public static int calculateSum1(String s){
+
+        //Here each single digit it added eg: 1+2+4+5+6+7+8
+        int result=0;
+
+        for(char c : s.toCharArray()){
+            if(Character.isDigit(c)){
+                result = result+Integer.parseInt(String.valueOf(c));
+            }
+        }
+
+
+        return result;
+    }
+
+
+
 
     public static void main(String[] args) {
         String str = "12abc45def67hi8";
         System.out.println(calculateSum(str));
+        System.out.println(calculateSum1(str));
     }
 }
