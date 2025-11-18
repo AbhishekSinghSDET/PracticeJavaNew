@@ -15,6 +15,7 @@ public class FindMostOccurenceCharCount {
         int temp = 0;
         char c = '\0';
         Map<Character,Integer> result = new LinkedHashMap<>();
+
         for(Map.Entry<Character,Integer> entry : map.entrySet()){
             if(entry.getValue() > temp){
                 temp = entry.getValue();
